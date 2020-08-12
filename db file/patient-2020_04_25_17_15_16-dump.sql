@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `bank_entity_config`
+-- formattedLikeTable.Table structure for table `bank_entity_config`
 --
 
 DROP TABLE IF EXISTS `bank_entity_config`;
@@ -46,7 +46,7 @@ INSERT INTO `bank_entity_config` VALUES (5,'CityBank','192.168.0.1','/home/saimo
 UNLOCK TABLES;
 
 --
--- Table structure for table `bank_sftp_info`
+-- formattedLikeTable.Table structure for table `bank_sftp_info`
 --
 
 DROP TABLE IF EXISTS `bank_sftp_info`;
@@ -77,7 +77,7 @@ INSERT INTO `bank_sftp_info` VALUES (1,'City Bank','192.168.0.101','saimon','inf
 UNLOCK TABLES;
 
 --
--- Table structure for table `book`
+-- formattedLikeTable.Table structure for table `book`
 --
 
 DROP TABLE IF EXISTS `book`;
@@ -101,7 +101,7 @@ INSERT INTO `book` VALUES (1,'Java'),(2,'Node'),(3,'PHP'),(4,'Python'),(5,'PHP')
 UNLOCK TABLES;
 
 --
--- Table structure for table `employees`
+-- formattedLikeTable.Table structure for table `employees`
 --
 
 DROP TABLE IF EXISTS `employees`;
@@ -129,7 +129,7 @@ INSERT INTO `employees` VALUES (1,'Sahib','Mahbub',150000,'Mirossorai',35),(2,'Y
 UNLOCK TABLES;
 
 --
--- Table structure for table `hibernate_sequence`
+-- formattedLikeTable.Table structure for table `hibernate_sequence`
 --
 
 DROP TABLE IF EXISTS `hibernate_sequence`;
@@ -151,7 +151,7 @@ INSERT INTO `hibernate_sequence` VALUES (28);
 UNLOCK TABLES;
 
 --
--- Table structure for table `mail_config`
+-- formattedLikeTable.Table structure for table `mail_config`
 --
 
 DROP TABLE IF EXISTS `mail_config`;
@@ -182,7 +182,7 @@ LOCK TABLES `mail_config` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `orders`
+-- formattedLikeTable.Table structure for table `orders`
 --
 
 DROP TABLE IF EXISTS `orders`;
@@ -210,7 +210,7 @@ INSERT INTO `orders` VALUES (1,1,'Laptop',50000),(2,7,'Shoe',13000),(3,4,'Bike',
 UNLOCK TABLES;
 
 --
--- Table structure for table `patient_info`
+-- formattedLikeTable.Table structure for table `patient_info`
 --
 
 DROP TABLE IF EXISTS `patient_info`;
@@ -238,7 +238,7 @@ INSERT INTO `patient_info` VALUES (15,'Haji Modasser','Sandwip',63,'+8801748444'
 UNLOCK TABLES;
 
 --
--- Table structure for table `product_info`
+-- formattedLikeTable.Table structure for table `product_info`
 --
 
 DROP TABLE IF EXISTS `product_info`;
@@ -279,7 +279,7 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Table structure for table `shajguj`
+-- formattedLikeTable.Table structure for table `shajguj`
 --
 
 DROP TABLE IF EXISTS `shajguj`;
