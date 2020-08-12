@@ -11,7 +11,7 @@ public class FormattedStrings {
             String s1=sc.next();
             int x=sc.nextInt();
 
-            System.out.printf("%-15s %03d %n", s1, x);
+            System.out.printf("%-3s %03d %n", s1, x);
             //System.out.format("%-15s %03d %n", s1, x);
         }
 
