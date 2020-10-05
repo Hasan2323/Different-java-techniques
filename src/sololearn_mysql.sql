@@ -12,6 +12,7 @@ TRUNCATE TABLE tableName;
 
 #DISTINCT
 select distinct City from employees;
+select distinct(City) from employees;
 
 # COUNT
 select count(*) as total_employee from employees;
@@ -21,8 +22,10 @@ select count(*) from employees where age = 28;
 select count(*) from employees where salary > 50000;
 select count(employees.ID),employees.City from employees GROUP BY employees.City; #List the number of employees in each City.
 
+#GROUP BY
 #List the number of employees in each City and order by city with the most customers First.
 select count(employees.ID),employees.City from employees GROUP BY employees.City ORDER BY count(employees.ID) desc;
+select source, al, sum(amount) as amount from report where source = 'mtbl' and al = 'brac';
 
 #BETWEEN
 select * from employees where salary between 40000 and 80000;
@@ -59,6 +62,9 @@ select upper(FirstName) as FirstName, lower(LastName) as LastNamee from employee
 #AVG, SUM
 select avg(salary) as AvgOfSalary, sum(salary) as SumOfSalary from employees;
 
+select source, al, sum(amount) as amount from report where source = 'mtbl' and al = 'brac';
+
+
 #SQRT- square root
 select FirstName,sqrt(salary) as Sqrt_Of_Salary from employees;
 
@@ -86,9 +92,14 @@ select LastName from employees where LastName not like 's%'; #employees whose La
 
 select LastName from employees where LastName like '%n'; #employees whose LastName ends with 'n'
 select LastName from employees where LastName like 'S%n'; #starts with s and ends with n
-select LastName from employees where LastName like 's_%_%_%_%'; #starts with a and has at least 3 characters
+select LastName from employees where LastName like 's_%_%_%'; #starts with s and has at least 3 characters
 
 select FirstName from employees where FirstName like '_a%' or FirstName like '_o%'; #employees whose LastName's 2nd character is 'a' or 'o'
+
+select FirstName from employees where FirstName like 'a%' or FirstName like 's%' or FirstName like 'm%'; # (SAME) employees whose FirstName starts with 'a' or 's' or 'm'
+select FirstName from employees where FirstName rlike '^[asm]'; # (SAME) employees whose FirstName starts with 'a' or 's' or 'm'
+select FirstName from employees where left(FirstName,1) in ('a', 's', 'm'); # (SAME) employees whose FirstName starts with 'a' or 's' or 'm'
+
 
 select LastName from employees where LastName like '%a_'; #employees whose LastName's 2nd character from ending is 'a'
 
@@ -99,6 +110,13 @@ select * from employees where FirstName like '[^smt]%'; #select all where First 
 select * from employees where FirstName like '[a-n]%'; #select all where First letter of FirstName starts with anything from 'a' to 'n' and THIS WON'T WORK ON MySQL
 select * from employees where FirstName like '[smt]%'; #select all where First letter of FirstName is 's' or 'm' or 't' and THIS WON'T WORK ON MySQL
 
+## length()
+select FirstName, length(FirstName) as Length from employees order by Length, FirstName asc limit 1;
+select FirstName, length(FirstName) as Length from employees order by Length desc limit 1;
+
+## Right() - MySQL RIGHT() extracts a specified number of characters from the right side of a string.
+SELECT RIGHT(LastName,3) from employees where FirstName='Muhammad';
+select FirstName from employees where age > 25 order by right(FirstName, 3);
 
 #Join
 select employees.ID, employees.FirstName, orders.order_name, orders.Amount
@@ -120,7 +138,7 @@ select em.ID, em.FirstName, ord.order_name, ord.Amount
     order by em.ID;
 
 #### LEFT JOIN
-select em.ID, em.FirstName, ord.order_name, ord.Amount
+select em.*, ord.order_name, ord.Amount
     from employees as em left outer join orders as ord
     on em.ID = ord.employee_id;
 
