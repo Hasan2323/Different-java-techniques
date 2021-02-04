@@ -15,7 +15,7 @@ public class ParentClass {
     }
 
     public void job() {
-        System.out.println("Parent" + this.getProfession());
+        System.out.println("Parent: " + this.getProfession());
     }
 
 
