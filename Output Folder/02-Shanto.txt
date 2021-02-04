@@ -2,7 +2,7 @@ Name :Shanto    Student Roll :02
 
 
 -------------------------------------------
-Subject |  generateMarkSheet.Marks  | Grade Point  | Grade  |
+Subject |  Marks  | Grade Point  | Grade  |
 -------------------------------------------
 Bangla  |65       |              |        |
 English |70       |              |        |

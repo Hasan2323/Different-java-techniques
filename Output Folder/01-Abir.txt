@@ -2,7 +2,7 @@ Name :Abir    Student Roll :01
 
 
 -------------------------------------------
-Subject |  generateMarkSheet.Marks  | Grade Point  | Grade  |
+Subject |  Marks  | Grade Point  | Grade  |
 -------------------------------------------
 Bangla  |60       |              |        |
 English |65       |              |        |
