@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * @Author Muhammad Saimon
@@ -27,11 +28,12 @@ public class BanglaDate {
 
         // -------------- opening date -------------------------
         String dateAsString = LocalDateTime.now(ZoneId.of("GMT+6")).toString(); // openingDate
-        System.out.println("openingDate: " + dateAsString); // 2021-05-12T12:51:50.813141
+        System.out.println("\nopeningDate: " + dateAsString); // 2021-05-12T12:51:50.813141
 
         LocalDateTime parse = LocalDateTime.parse(dateAsString);
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
-        String localTest = myFormatObj.format(parse);
+        // String localTest = myFormatObj.format(parse);
+        String localTest = parse.format(myFormatObj);
         System.out.println("openingDate output way 1: " + localTest.toUpperCase());
 
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
@@ -71,6 +73,32 @@ public class BanglaDate {
         // ----------------------- Cancellation Date end ---------------------------------------
 
 
+        // ----------------------------- UTC ---------------------------
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US);
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        String todayInUTC = formatter.format(new Date());
+        System.out.println("\nToday in UTC (-6 hours version): " + todayInUTC);
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        String todayInUTCWithLocalDate = LocalDateTime.now(ZoneId.of("UTC")).format(dateTimeFormatter);
+
+        System.out.println("Today in UTC with LocalDateTime (-6 hours version): " + todayInUTCWithLocalDate);
+        // ----------------------------- UTC End ---------------------------
+
+
+        // ----------------------------- UTC to yyyyMMddHHmmss ---------------------------
+        DateTimeFormatter yyyyMMddHHmmssLocal = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        LocalDateTime localDateTimeUTC = LocalDateTime.parse(todayInUTCWithLocalDate, dateTimeFormatter);
+        String UTC_to_yyyyMMddHHmmss = localDateTimeUTC.format(yyyyMMddHHmmssLocal);
+        System.out.println("\nUTC to yyyyMMddHHmmss with LocalDateTime: " + UTC_to_yyyyMMddHHmmss);
+
+        SimpleDateFormat yyyyMMddHHmmss = new SimpleDateFormat("yyyyMMddHHmmss");
+        String UTC_to_yyyyMMddHHmmss_2 = yyyyMMddHHmmss.format(formatter.parse(todayInUTC));
+        System.out.println("UTC to yyyyMMddHHmmss way 2: " + UTC_to_yyyyMMddHHmmss_2);
+        // ----------------------------- UTC to yyyyMMddHHmmss End ---------------------------
+
+
 
 //        SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yy");
 //        Date parse = sdf.parse("12-oct-14");
@@ -82,7 +110,7 @@ public class BanglaDate {
 //        System.out.println("Hello : " + format);
 
         String approval_request = TestEnum.valueOf("APPROVAL_REQUEST").getDescription();
-        System.out.println(approval_request);
+        System.out.println("\n" + approval_request);
 
 
 
