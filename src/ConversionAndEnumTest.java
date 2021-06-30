@@ -10,9 +10,9 @@ public class ConversionAndEnumTest {
 //        }
 //
 //        System.out.println();
-        System.out.println(TestEnum.valueOf("DISTRIBUTOR_REFUND").getDescription());
-        System.out.println(TestEnum.SCHEDULE_REFUND.getDescription());
-        System.out.println(TestEnum.SCHEDULE_REFUND.name());
+        System.out.println(TestEnum.valueOf("MONTHLY").getDescription());
+        System.out.println(TestEnum.WEEKLY.getDescription());
+        System.out.println(TestEnum.WEEKLY.name());
 
         List<TestEnum> allEnumValues = Arrays.asList(TestEnum.values());
         //System.out.println(Collections.sort(allEnumValues));

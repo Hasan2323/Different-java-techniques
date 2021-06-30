@@ -1,21 +1,20 @@
 public enum TestEnum {
-    APPROVAL_REQUEST("Event Description for Approval Request"),
-    APPROVAL_RESOLVED("Event Description for Approval Resolved"),
-    SCHEDULE_REFUND("Event Description for Schedule Refund"),
-    DISTRIBUTOR_REFUND("Event Description for Distributor Refund"),
-    SYSTEM_NOTIFICATION("Event Description for System Notification"),
-    EXCEPTION_EMAIL("Event Description for Exception Email"),
-    BANK_SFTP_HEALTH_CHECK("Event Description for Bank SFTP Health Check");
+    MONTHLY("M", "Monthly"),
+    YEARLY("Y", "Yearly"),
+    WEEKLY("W", "Weekly");
 
     private final String description;
+    private final String value;
 
-    TestEnum(String description) {
+    TestEnum(String description, String value) {
         this.description = description;
+        this.value = value;
     }
 
     public String getDescription() {
         return description;
     }
-
-
+    public String getValue() {
+        return value;
+    }
 }

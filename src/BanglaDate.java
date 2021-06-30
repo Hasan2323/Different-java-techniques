@@ -109,7 +109,7 @@ public class BanglaDate {
 //        //System.out.println("Hello : " + format1);
 //        System.out.println("Hello : " + format);
 
-        String approval_request = TestEnum.valueOf("APPROVAL_REQUEST").getDescription();
+        String approval_request = TestEnum.valueOf("WEEKLY").getDescription();
         System.out.println("\n" + approval_request);
 
 
