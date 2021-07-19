@@ -35,6 +35,7 @@ public class DateCompare {
 
         System.out.println("\n################# Find Months Between two Dates ##################\n");
         // https://stackoverflow.com/questions/48950145/java-8-calculate-months-between-two-dates
+        // https://www.baeldung.com/java-date-difference (with Zone example)
 
         String openingDate = "2021-05-11 12:20:10:870 +0600";
         DateTimeFormatter LOCAL_DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS Z");
@@ -70,6 +71,10 @@ public class DateCompare {
 
         //---------------------------------------------------------------
 
+        long monthsUsingUntil = accountOpenDate.until(currentDay, ChronoUnit.MONTHS);
+        System.out.println("Months using Until : " + monthsUsingUntil);
+
+        //---------------------------------------------------------------
 
     }
 }
