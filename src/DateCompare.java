@@ -61,7 +61,12 @@ public class DateCompare {
         //---------------------------------------------------------------
 
         long monthsBetween = ChronoUnit.MONTHS.between(accountOpenDate, currentDay);
+        long weeksBetween = ChronoUnit.WEEKS.between(accountOpenDate, currentDay);
+        long daysBetween = ChronoUnit.DAYS.between(accountOpenDate, currentDay);
+
         System.out.println("Number of Months using ChronoUnit : " + monthsBetween);
+        System.out.println("Number of Weeks using ChronoUnit : " + weeksBetween);
+        System.out.println("Number of Days using ChronoUnit : " + daysBetween);
 
         //---------------------------------------------------------------
 
